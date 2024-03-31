@@ -30,3 +30,4 @@ coverage
 FRONT/.eslintrc.cjs
 FRONT/env.d.ts
 FRONT/.prettierrc.json
+.env
