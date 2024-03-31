@@ -29,7 +29,7 @@ app.use(urlEncodedParser);
 app.use(bodyParser.json())
 
 
-app.post('/send-message', (req, res) => {
+app.post('/send-message', async (req, res) => {
     console.log(req);
     const data = {
         name: req.body.name,
@@ -37,7 +37,7 @@ app.post('/send-message', (req, res) => {
         phoneNumber: req.body.phoneNumber,
         message: req.body.message
     };
-    const sent = sendMessage(data)
+    const sent = await sendMessage(data)
     res.end(JSON.stringify(sent))
 })
 
@@ -51,7 +51,7 @@ app.listen(3001, () => {
 
 
 
-function sendMessage(d){
+async function sendMessage(d){
     const data = {
         from: 'portfolio@claramarinho.com',
         to: "marinho.claramb@gmail.com",
@@ -63,7 +63,7 @@ function sendMessage(d){
         `
     };
     
-    const response = mg.messages().send(data, (err, body) => {
+    const response = await mg.messages().send(data, (err, body) => {
         console.log(body)
     })
     return response
