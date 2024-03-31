@@ -38,6 +38,7 @@ app.post('/send-message', async (req, res) => {
         message: req.body.message
     };
     const sent = await sendMessage(data)
+    console.log(sent);
     res.end(JSON.stringify(sent))
 })
 
