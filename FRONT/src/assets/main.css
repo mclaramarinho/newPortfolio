@@ -1,0 +1,44 @@
+:root {
+    --color-navy-blue: #004369;
+    --color-teal: #01949a;
+    --color-beige: #e5ddc8;
+    --color-pinky-red: #db1f48;
+    --color-white: #f8f8f8;
+    --color-background: #fbf9f4;
+    --main-font-family: 'Montserrat';
+}
+
+body {
+    margin: 0;
+    color: var(--color-navy-blue);
+    font-family: var(--main-font-family);
+}
+#app {
+    background-color: var(--color-background);
+}
+
+section {
+    width: 80vw;
+    color: var(--color-navy-blue);
+}
+section:not(.no_margin__top) {
+    margin-top: 10vh;
+}
+.section_title {
+    font-size: 2.2rem;
+}
+.justify-end {
+    justify-self: end;
+}
+.w-fit {
+    width: fit-content;
+}
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+.v-btn--elevated .v-btn__content {
+    color: var(--color-white);
+}
