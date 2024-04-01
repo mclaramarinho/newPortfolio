@@ -31,8 +31,8 @@ export default {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    width: 1vw;
-    height: 1vw;
+    width: 1.5vh;
+    height: 1.5vh;
     border-radius: 100vw;
     background-color: var(--color-pinky-red);
 }

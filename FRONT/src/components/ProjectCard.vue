@@ -53,7 +53,7 @@ export default {
     display: grid;
     width: 80%;
     margin: 0 auto;
-    padding: 0 2%;
+    padding: 3%;
     color: var(--color-navy-blue);
     row-gap: 3vh;
     column-gap: 2vw;

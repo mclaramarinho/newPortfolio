@@ -31,7 +31,6 @@
 </template>
 
 <script lang="ts">
-import { useGoTo } from 'vuetify'
 
 export default {
     name: 'start-section',
@@ -57,7 +56,7 @@ export default {
     width: 100%;
     height: 100%;
     text-align: center;
-    background: linear-gradient(-180deg, #f8f8f800, #ffffff00, #ffffff00, #ffffff);
+    background: linear-gradient(-180deg, #f8f8f800, #ffffff00, #ffffff00, #fbf9f4);
 }
 section {
     position: relative;
@@ -88,6 +87,7 @@ img {
     }
     .action_buttons__container {
         justify-items: center;
+        grid-template-columns: 1fr;
     }
     img {
         position: sticky;
@@ -107,6 +107,7 @@ img {
     }
     .action_buttons__container {
         justify-items: start;
+        grid-template-columns: 1fr 1fr;
     }
 }
 .start_title {
@@ -134,8 +135,9 @@ img {
 }
 .action_buttons__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
+    row-gap: 2vh;
+    column-gap: 2vw;
 }
 .v-btn.action_button {
     color: white;

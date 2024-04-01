@@ -3,10 +3,10 @@
         <h1 class="section_title">{{ $t("projectsSection.title") }}</h1>
         <v-window continuous show-arrows>
             <template #prev="{ props }">
-                <v-btn variant="text" icon="mdi-chevron-left" @click="props.onClick"></v-btn>
+                <v-btn class="controller_prev" variant="text" icon="mdi-chevron-left" @click="props.onClick" :size="$vuetify.display.mdAndDown ? 'sm' : 'large'"></v-btn>
             </template>
             <template #next="{ props }">
-                <v-btn variant="text" icon="mdi-chevron-right" @click="props.onClick"></v-btn>
+                <v-btn class="controller_next" variant="text" icon="mdi-chevron-right" @click="props.onClick" :size="$vuetify.display.mdAndDown ? 'sm' : 'large'"></v-btn>
             </template>
 
             <project-card v-for="(proj, k) in projData" :key="k" 
@@ -37,6 +37,14 @@ export default {
 </script>
 
 <style scoped>
+.controller_prev{
+    position: absolute;
+    left: 0;
+}
+.controller_next{
+    position: absolute;
+    right: 0;
+}
 h1 {
     margin-bottom: 5vh;
 }

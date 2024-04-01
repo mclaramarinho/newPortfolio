@@ -1,6 +1,7 @@
 <template>
     <div v-if="location === 'right'" class="grid_spacer"></div>
     <vertical-timeline v-if="location === 'right'" variant="right" />
+
     <div :class="`work_xp__item ${location === 'left' ? 'left_work__item' : 'right_work__item'}`">
         <div v-if="location === 'right'" class="work_xp__duration">
             <p class="year">{{ startYear }} - {{ endYear }}</p>
@@ -92,15 +93,14 @@
 }
 
 .work_xp__item {
-    position: relative;
-    display: grid;
+    display: inline-grid;
     text-align: justify;
     column-gap: 5%;
     row-gap: 2%;
 }
 
 .work_xp__content {
-    display: grid;
+    display: block;
     row-gap: 2%;
 }
 </style>

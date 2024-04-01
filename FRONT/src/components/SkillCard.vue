@@ -57,8 +57,9 @@ export default {
     justify-items: start;
 }
 .skill_title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 300;
+    text-align: start;
 }
 .skill_level {
     font-size: 1.1rem;

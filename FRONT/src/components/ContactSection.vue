@@ -7,22 +7,55 @@
                     {{ $t('contactMeSection.text') }}
                 </p>
                 <ul class="contacts_container">
+
                     <li class="contact_info__container">
-                        <p class="contact_type">Email</p>
-                        <p class="contact_data">{{ ci.email }}</p>
-                    </li>
-                    <li class="contact_info__container">
-                        <p class="contact_type">{{ $t('contactMeSection.location.title') }}</p>
+                        <p class="contact_type">{{ $t('contactMeSection.location.title') }}</p><!--open icon-->
                         <p class="contact_data">{{ $t('contactMeSection.location.city') }} | {{ $t('contactMeSection.location.state') }} | {{ $t('contactMeSection.location.country') }}</p>
                     </li>
+
+
+
                     <li class="contact_info__container">
-                        <p class="contact_type">Github</p>
-                        <a :href="ci.github" target="blank" class="contact_data">{{ ci.github }}</a>
+
+                        <p class="contact_type">
+                            Email
+                            <v-icon @click="copyEmail" 
+                                :icon="copyBtnVar" 
+                                v-if="$vuetify.display.width < 960" variant="text" 
+                                class="copy_email__btn"
+                                :color="copyBtnColor"
+                                style="cursor: pointer;" />
+                        </p> 
+                        
+                        <p class="contact_data" v-if="$vuetify.display.width > 960">{{ ci.email }}</p>
                     </li>
+
+
+
                     <li class="contact_info__container">
-                        <p class="contact_type">Linkedin</p>
-                        <a :href="ci.linkedin" target="blank" class="contact_data">{{ ci.linkedin }}</a>
+                        <a target="_blank" class="contact_type" :href="ci.github" v-if="$vuetify.display.width < 960">
+                            Github
+                            <v-icon icon="mdi-open-in-new" v-if="$vuetify.display.width < 960"></v-icon>
+                        </a>
+
+                        <p class="contact_type" v-if="$vuetify.display.width > 960">Github</p>
+                        
+                        <a :href="ci.github" target="blank" class="contact_data" v-if="$vuetify.display.width > 960">{{ ci.github }}</a>
                     </li>
+
+
+                    <li class="contact_info__container">
+                        <a target="_blank" class="contact_type" :href="ci.linkedin" v-if="$vuetify.display.width < 960">
+                            Linkedin
+                            <v-icon icon="mdi-open-in-new" v-if="$vuetify.display.width < 960"></v-icon>
+                        </a>
+
+                        <p class="contact_type" v-if="$vuetify.display.width > 960">Linkedin</p>
+                        
+                        <a :href="ci.linkedin" target="blank" class="contact_data" v-if="$vuetify.display.width > 960">{{ ci.linkedin }}</a>
+
+                    </li>
+
                 </ul>
             </div>
             <div class="left_side__container container_side">
@@ -71,6 +104,8 @@ export default {
             },
             ci: contactInfo,
             sendBtnColor: "var(--color-navy-blue)",
+            copyBtnColor: "var(--color-navy-blue)",
+            copyBtnVar: "mdi-clipboard-outline"
         }
     },
     methods:{
@@ -112,6 +147,16 @@ export default {
                     this.sendBtnColor = "var(--color-navy-blue)";
                 }, 5000);             
             }
+        },
+        copyEmail(){
+            navigator.clipboard.writeText("marinho.claramb@gmail.com")
+            this.copyBtnColor = "success";
+            this.copyBtnVar = "mdi-clipboard"
+            setTimeout(() => {
+                this.copyBtnColor = "var(--color-navy-blue)";
+                this.copyBtnVar = "mdi-clipboard-outline"
+
+            }, 3000);             
         }
     },
     emits: ['contact-success', 'contact-error']
@@ -119,7 +164,11 @@ export default {
 </script>
 
 <style scoped>
+.copy_email__btn{
+    cursor: pointer;
+}
 a{
+    color: var(--color-navy-blue);
     text-decoration: none;
 }
 .contact_content__container {
@@ -167,5 +216,6 @@ ul {
 }
 .contact_data {
     font-style: italic;
+    word-break: break-all;
 }
 </style>

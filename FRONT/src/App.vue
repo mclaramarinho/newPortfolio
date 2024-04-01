@@ -37,27 +37,19 @@ export default {
 </script>
 
 <template>
-    <v-app>
-        <NavBar />
-        <main>
-            <start-section @scroll-to-contact="goToContactSection" />
-            <my-skills-section />
-            <projects-section />
-            <experience-section />
-            <contact-section  />
-            
-        </main>
-        <footer>
-            <footer-piece />
-        </footer>
-    </v-app>
+    <NavBar />
+    <start-section @scroll-to-contact="goToContactSection" />
+    <my-skills-section />
+    <projects-section />
+    <experience-section />
+    <contact-section  />
+    <footer-piece />
 </template>
 
 <style scoped>
-main {
-    position: relative;
+/* div {
+    display: inline-grid;
+    justify-items: center;
     text-align: center;
-    display: grid;
-    justify-content: center;
-}
+} */
 </style>

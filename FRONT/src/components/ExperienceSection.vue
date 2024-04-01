@@ -1,9 +1,7 @@
 <template>
     <section>
         <h1 class="section_title">{{ $t('workXpSection.title') }}</h1>
-
         <div class="work_xp__container">
-
             <work-xp-item v-for="i in length" :key="i" 
                 :location="i % 2 !== 0 ? 'left' : 'right'"
                 :company="xpData[i-1].company" :role="xpData[i-1].role" 
@@ -63,7 +61,7 @@ export default {
 .work_xp__container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    /* justify-items: center; */
+    justify-items: center;
     column-gap: 2%;
     margin: 5% auto;
 
