@@ -28,16 +28,16 @@
             <div class="left_side__container container_side">
                 <v-form ref="contactForm">
                     <v-text-field :model-value="messageData.name" :rules="rules.name"
-                                @input="(e) => messageData.name = e.target.value" :label="$t('contactMeSection.form.nameLabel')" />
+                                @input="(e : any) => messageData.name = e.target.value" :label="$t('contactMeSection.form.nameLabel')" />
 
-                    <v-text-field :model-value="messageData.email" @input="(e) => messageData.email = e.target.value"
+                    <v-text-field :model-value="messageData.email" @input="(e : any) => messageData.email = e.target.value"
                                 :rules="rules.email"
                                 :label="$t('contactMeSection.form.emailLabel')"></v-text-field>
 
-                    <v-text-field :model-value="messageData.phoneNumber" @input="(e) => messageData.phoneNumber = e.target.value"
+                    <v-text-field :model-value="messageData.phoneNumber" @input="(e : any) => messageData.phoneNumber = e.target.value"
                                 :label="$t('contactMeSection.form.phoneLabel')"></v-text-field>
 
-                    <v-textarea :model-value="messageData.message" @input="(e) => messageData.message = e.target.value"
+                    <v-textarea :model-value="messageData.message" @input="(e : any) => messageData.message = e.target.value"
                                 :rules="rules.message" 
                                 :label="$t('contactMeSection.form.messageLabel')" persistent-counter counter />
 
@@ -75,7 +75,7 @@ export default {
     },
     methods:{
         async sendMessage(){
-            const validate = await this.$refs.contactForm.validate()
+            const validate = await (this.$refs.contactForm as any).validate()
             if (!validate.valid) {return;}
             
             const url = 'https://new-portfolio-clamararinho.vercel.app/send-message';
@@ -97,7 +97,7 @@ export default {
 
             if (req.status === 200){
                 console.log("success");
-                await this.$refs.contactForm.reset();
+                await (this.$refs.contactForm as any).reset();
 
                 this.sendBtnColor = "success";
 
@@ -110,7 +110,6 @@ export default {
 
                 setTimeout(() => {
                     this.sendBtnColor = "var(--color-navy-blue)";
-                    this.sendBtnTxt = this.$t('contactMeSection.form.button')
                 }, 5000);             
             }
         }
