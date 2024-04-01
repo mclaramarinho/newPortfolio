@@ -8,6 +8,14 @@ import ContactSection from '@/components/ContactSection.vue'
 import FooterPiece from '@/components/FooterPiece.vue'
 import { useGoTo } from 'vuetify'
 
+import '@/assets/conexaoe03.png'
+import '@/assets/telebot.png'
+import '@/assets/verrmed.png'
+import '@/assets/feelfine.png'
+import '@/assets/fdsControlBot.png'
+import '@/assets/conexaoe03.png'
+
+
 export default {
     components: {
         NavBar,

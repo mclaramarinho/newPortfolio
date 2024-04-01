@@ -63,7 +63,7 @@ export const projEN = [
         name: "Feel Fine",
         desc: "Project developed for the Kick Off residency program at Porto Digital-Recife, with a focus on Mental Health. For this project, we developed a solution for teaching socio-emotional intelligence to children. Presented on 05/29/23 and selected to present at DemoDay (13 best projects of the edition). We won 3rd place at the Rec'n'Play Embarque Arena on 10/19/23 with Feel Fine.",
         skills: ["Front-End", "Figma"],
-        imagePath: "",
+        imagePath: "feelfine.png",
         url: ""
     },
     {
