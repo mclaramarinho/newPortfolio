@@ -34,7 +34,7 @@ section{
     position: relative;
     margin: 0 auto;
 }
-section:not(.no_margin__top) {
+section {
     margin-top: 15vh;
 } 
 .section_title {

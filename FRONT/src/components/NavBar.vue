@@ -23,6 +23,8 @@ export default {
 
 <style scoped>
 nav {
+    position: fixed;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -37,9 +37,9 @@ export default {
     background-color: var(--color-pinky-red);
 }
 .right_circle {
-    top: -5%;
+    top: 5%;
 }
 .left_circle {
-    top: 10%;
+    top: 3%;
 }
 </style>
