@@ -17,7 +17,7 @@ export default {
         ProjectsSection,
         ExperienceSection,
         ContactSection,
-        FooterPiece
+        FooterPiece,
     },
     data() {
         return {
@@ -44,7 +44,8 @@ export default {
             <my-skills-section />
             <projects-section />
             <experience-section />
-            <contact-section />
+            <contact-section  />
+            
         </main>
         <footer>
             <footer-piece />

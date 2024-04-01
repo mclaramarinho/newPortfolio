@@ -1,19 +1,15 @@
 <template>
     <section class="no_margin__top">
         <div class="start_main__content">
-            <p class="start_title">Hello! <strong>I'm Clara.</strong></p>
+            <p class="start_title">{{ $t("startSection.hello") }} <strong>{{ $t("startSection.name") }}</strong></p>
 
             <div class="start_subtitle__container">
                 <div class="hr"></div>
-                <p class="start_subtitle__text">Lorem ipsum dolor</p>
+                <p class="start_subtitle__text">{{ $t("startSection.role") }}</p>
                 <img src="../assets/icons/star.png" alt="" />
             </div>
 
-            <p class="short_bio__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget sem et ante
-                dapibus gravida facilisis ac felis. Donec euismod tellus ac sem iaculis, in maximus
-                ex semper. Maecenas dignissim arcu sapien, ac egestas dolor semper eget.
-            </p>
+            <p class="short_bio__text">{{ $t('startSection.bio') }}</p>
 
             <div class="action_buttons__container">
                 <v-btn
@@ -21,9 +17,9 @@
                     variant="elevated"
                     color="var(--color-navy-blue)"
                     @click="goToContactSection"
-                    >Let's Talk</v-btn
+                    >{{ $t("startSection.contactBtn") }}</v-btn
                 >
-                <v-btn prepend-icon="mdi-download" variant="outlined">Resume</v-btn>
+                <v-btn prepend-icon="mdi-download" variant="outlined">{{ $t("startSection.resumeBtn") }}</v-btn>
             </div>
         </div>
 
@@ -39,6 +35,9 @@ import { useGoTo } from 'vuetify'
 
 export default {
     name: 'start-section',
+    created(){
+        console.log(this.$t("en.startSection.hello"))
+    },
     methods: {
         goToContactSection() {
             this.$emit('scrollToContact')

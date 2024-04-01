@@ -4,7 +4,9 @@
             <img :src="'/src/assets/' + image" alt="" />
 
             <div class="project_desc__container">
-                <p class="project_title">{{ title }}</p>
+                <a target="_blank" :href="url" class="project_title">{{ title }} 
+                    <v-icon v-if="url.length > 0" icon="mdi-open-in-new"></v-icon>
+                </a>
                 <div class="project_skills__container">
                     <v-chip v-for="skill in skills" :key="skill">{{ skill }}</v-chip>
                 </div>
@@ -34,6 +36,10 @@ export default {
         image: {
             type: String,
             required: true
+        },
+        url: {
+            type: String,
+            required: true
         }
     },
     data() {
@@ -52,6 +58,7 @@ export default {
     row-gap: 3vh;
     column-gap: 2vw;
     text-align: justify;
+    position: relative;
 }
 @media (min-width: 960px) {
     .project_display__container {
@@ -64,14 +71,21 @@ export default {
     }
 }
 .project_desc__container {
+    
     display: grid;
     row-gap: 1vh;
+    align-content: start;
 }
 img {
     max-width: 100%;
 }
 .project_title {
     font-size: 1.8rem;
+    text-decoration: none;
+    color: var(--color-navy-blue);
+    >.v-icon{
+        font-size: 1rem;
+    }
 }
 .project_skills__container {
     display: grid;

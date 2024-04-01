@@ -1,13 +1,23 @@
 <template>
     <nav>
         <p>CM</p>
-        <v-btn icon="mdi-translate" variant="text"></v-btn>
+        <v-btn icon="mdi-translate" variant="text" @click="handleLanguageChange"></v-btn>
     </nav>
 </template>
 
 <script lang="ts">
 export default {
-    name: 'nav-bar'
+    name: 'nav-bar',
+    methods:{
+        handleLanguageChange(){
+            const current = this.$i18n.locale;
+            if (current === 'en'){
+                this.$i18n.locale = 'pt';
+            }else{
+                this.$i18n.locale = 'en';
+            }
+        }
+    }
 }
 </script>
 

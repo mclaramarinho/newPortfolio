@@ -11,7 +11,7 @@
             class="work_xp__content"
             :class="location === 'left' ? 'left_xp__content' : 'right_xp__content'"
         >
-            <p class="company_name bold">{{ company }}e</p>
+            <p class="company_name bold">{{ company }}</p>
             <p class="role italic">{{ role }}</p>
             <p class="xp_desc__content">{{ description }}</p>
 
@@ -21,7 +21,7 @@
                 variant="outlined"
                 prepend-icon="mdi-plus"
                 @click="showDialog = !showDialog"
-                >info</v-btn
+                >{{ $t('buttons.moreInfo') }}</v-btn
             >
         </div>
 
@@ -46,7 +46,6 @@
 .company_name,
 .year {
     font-size: 1.1rem;
-    text-wrap: nowrap;
 }
 .left_work__item {
     top: 10%;

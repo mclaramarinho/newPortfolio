@@ -1,15 +1,22 @@
 <template>
+    <div class="grid_spacer" v-if="lr === 'right'"></div>
     <div class="skill_container">
         <p class="skill_title">{{ name }}</p>
         <v-progress-linear :model-value="level * 25"></v-progress-linear>
         <p class="skill_level">{{ levelDescription }}</p>
     </div>
+    <div class="grid_spacer" v-if="lr === 'left'"></div>
 </template>
 
 <script lang="ts">
 export default {
     name: 'skill-card',
     props: {
+
+        lr:{
+            type: String,
+            required: true
+        },
         name: {
             type: String,
             required: true
@@ -31,13 +38,13 @@ export default {
     methods: {
         determineLevel() {
             if (this.level === 1) {
-                this.levelDescription = 'novice'
+                this.levelDescription = this.$t('skillsSection.beginner')
             } else if (this.level === 2) {
-                this.levelDescription = 'intermediate'
+                this.levelDescription = this.$t('skillsSection.intermediate')
             } else if (this.level === 3) {
-                this.levelDescription = 'advanced'
+                this.levelDescription = this.$t('skillsSection.advanced')
             } else if (this.level === 4) {
-                this.levelDescription = 'expert'
+                this.levelDescription = this.$t('skillsSection.expert')
             }
         }
     }
@@ -56,5 +63,17 @@ export default {
 .skill_level {
     font-size: 1.1rem;
     font-style: italic;
+}
+
+@media (min-width: 960px) {
+    .grid_spacer {
+        display: none;
+    }
+}
+
+@media (max-width: 960px) {
+    .grid_spacer {
+        display: block;
+    }
 }
 </style>

@@ -1,48 +1,61 @@
 <template>
     <section>
-        <h1 class="section_title">Work Experience</h1>
+        <h1 class="section_title">{{ $t('workXpSection.title') }}</h1>
 
         <div class="work_xp__container">
-            <work-xp-item
-                location="left"
-                company="Company Name"
-                role="Your role here"
-                description="Description of the project. Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Phasellus eget sem et ante dapibus gravida facilisis ac
-                                    felis. Donec euismod tellus ac sem iaculis, in maximus ex semper. Maecenas
-                                    dignissim arcu sapien, ac egestas dolor semper eget. Proin non tortor id
-                                    metus viverra semper a eget orci. Ut est magna, tristique id tincidunt vel,
-                                    mattis nec turpis. Nulla cursus magna non sem fringilla, et pulvinar orci
-                                    tincidunt. Praesent eget ornare odio."
-                start-year="2024"
-                end-year="2024"
-                duration="2 mo."
-            />
-            <work-xp-item
-                location="right"
-                company="Company Name"
-                role="Your role here"
-                description="Description of the project. Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Phasellus eget sem et ante dapibus gravida facilisis ac
-                                felis. Donec euismod tellus ac sem iaculis, in maximus ex semper. Maecenas
-                                dignissim arcu sapien, ac egestas dolor semper eget. Proin non tortor id
-                                metus viverra semper a eget orci. Ut est magna, tristique id tincidunt vel,
-                                mattis nec turpis. Nulla cursus magna non sem fringilla, et pulvinar orci
-                                tincidunt. Praesent eget ornare odio."
-                start-year="2024"
-                end-year="2024"
-                duration="2 mo."
-            />
+
+            <work-xp-item v-for="i in length" :key="i" 
+                :location="i % 2 !== 0 ? 'left' : 'right'"
+                :company="xpData[i-1].company" :role="xpData[i-1].role" 
+                :description="xpData[i-1].desc" :start-year="xpData[i-1].startYear" 
+                :end-year="xpData[i-1].endYear" :duration="xpData[i-1].duration" />
+           
         </div>
-        <v-btn variant="outlined" append-icon="mdi-chevron-down">Show More</v-btn>
+        <show-more-btn @click="handleLengthIncrease" :more-or-less="moreOrLess"  />
     </section>
 </template>
 
 <script lang="ts">
+import ShowMoreBtn from './ShowMoreBtn.vue';
 import WorkXpItem from '@/components/WorkXpItem.vue'
+import { xpPT, xpEN } from '@/data/xp';
 export default {
     name: 'xp-section',
-    components: { WorkXpItem }
+    components: { WorkXpItem, ShowMoreBtn },
+    data(){
+        return {
+            moreOrLess: "more",
+            length: 3
+        }
+    },
+    computed: {
+        xpData(){
+            return this.$i18n.locale === 'pt' ? xpPT : xpEN
+        },
+    },
+    methods:{
+        handleLengthIncrease(){
+            console.log(this.length)
+            
+            if(this.moreOrLess === 'less'){
+                this.moreOrLess = 'more'
+                this.length = 3
+                return;
+            }
+
+            const desiredLen = this.length + 3
+            console.log(desiredLen);
+            
+            if(desiredLen > this.xpData.length){
+                this.length = this.length + (this.xpData.length - this.length)
+            }else{
+                this.length = desiredLen
+            }
+            if(this.length === this.xpData.length){
+                this.moreOrLess = "less"
+            }
+        }
+    }
 }
 </script>
 
@@ -50,13 +63,15 @@ export default {
 .work_xp__container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    justify-items: center;
+    /* justify-items: center; */
     column-gap: 2%;
     margin: 5% auto;
+
 }
 @media (max-width: 960px) {
     .work_xp__container {
         width: 95%;
+        text-wrap: wrap;
     }
 }
 @media (min-width: 961px) {

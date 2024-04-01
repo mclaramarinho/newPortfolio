@@ -1,40 +1,54 @@
 <template>
     <section>
-        <h1 class="section_title">My Skills</h1>
+        <h1 class="section_title">{{ $t("skillsSection.title") }}</h1>
         <div class="skills_section__content">
-            <skill-card class="left_card" name="HTML" :level="3" />
-            <div class="grid_spacer"></div>
-
-            <div class="grid_spacer"></div>
-            <skill-card class="right_card" name="HTML" :level="3" />
-
-            <skill-card class="left_card" name="HTML" :level="3" />
-            <div class="grid_spacer"></div>
-
-            <div class="grid_spacer"></div>
-            <skill-card class="right_card" name="HTML" :level="3" />
-
-            <skill-card class="left_card" name="HTML" :level="3" />
-            <div class="grid_spacer"></div>
-
-            <div class="grid_spacer"></div>
-            <skill-card class="right_card" name="HTML" :level="3" />
-
-            <skill-card class="left_card" name="HTML" :level="3" />
-            <div class="grid_spacer"></div>
-
-            <div class="grid_spacer"></div>
-            <skill-card class="right_card" name="HTML" :level="3" />
+            
+            <skill-card v-for="i in length" :key="i"
+                        :class="i % 2 !== 0 ? 'left_card' : 'right_card'" :name="data[i-1].name" 
+                        :level="data[i-1].level" :lr="i % 2 !== 0 ? 'left' : 'right'"/>
         </div>
-        <v-btn variant="outlined" append-icon="mdi-chevron-down">Show More</v-btn>
+        <show-more-btn :more-or-less="moreOrLess" @click="increaseLength"  />
     </section>
 </template>
 
 <script lang="ts">
+import ShowMoreBtn from './ShowMoreBtn.vue';
 import SkillCard from '@/components/SkillCard.vue'
+import { skills } from '@/data/skills';
+
 export default {
     name: 'my-skills-section',
-    components: { SkillCard }
+    components: { SkillCard, ShowMoreBtn },
+    data(){
+        return {
+            data: skills,
+            length: 12,
+            moreOrLess: "more",
+        }
+    },
+    methods:{
+        increaseLength(){
+            console.log(this.length)
+            
+            if(this.moreOrLess === 'less'){
+                this.moreOrLess = 'more'
+                this.length = 12
+                return;
+            }
+
+            const desiredLen = this.length + 3
+            console.log(desiredLen);
+            
+            if(desiredLen > this.data.length){
+                this.length = this.length + (this.data.length - this.length)
+            }else{
+                this.length = desiredLen
+            }
+            if(this.length === this.data.length){
+                this.moreOrLess = "less"
+            }
+        }
+    }
 }
 </script>
 
@@ -51,9 +65,6 @@ export default {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 5vw;
     }
-    .grid_spacer {
-        display: none;
-    }
 }
 
 @media (max-width: 960px) {
@@ -66,9 +77,6 @@ export default {
     }
     .right_card {
         grid-column: 2 / 3;
-    }
-    .grid_spacer {
-        display: block;
     }
 }
 </style>
