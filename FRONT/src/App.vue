@@ -6,7 +6,6 @@ import ProjectsSection from '@/components/ProjectsSection.vue'
 import ExperienceSection from '@/components/ExperienceSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import FooterPiece from '@/components/FooterPiece.vue'
-
 import { useGoTo } from 'vuetify'
 
 export default {
