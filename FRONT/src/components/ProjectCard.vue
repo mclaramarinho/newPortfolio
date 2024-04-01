@@ -18,7 +18,6 @@
     </v-window-item>
 </template>
 <script lang="ts">
-import '../../'
 export default {
     name: 'project-card',
     props: {
