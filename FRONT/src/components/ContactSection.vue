@@ -49,7 +49,7 @@
 </template>
 
 <script lang="ts">
-import {contactInfo} from "@/data/contactInfo.ts"
+import {contactInfo} from "@/data/contactInfo"
 export default {
     name: 'contact-section',
     data(){
