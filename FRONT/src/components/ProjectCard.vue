@@ -1,7 +1,7 @@
 <template>
     <v-window-item>
         <v-card variant="flat" class="project_display__container">
-            <img :src="'../src/assets/' + image" alt="" />
+            <img :src="'/src/assets/' + image" alt="" />
 
             <div class="project_desc__container">
                 <a target="_blank" :href="url" class="project_title">{{ title }} 
@@ -18,6 +18,7 @@
     </v-window-item>
 </template>
 <script lang="ts">
+import '../../'
 export default {
     name: 'project-card',
     props: {
