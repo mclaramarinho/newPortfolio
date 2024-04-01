@@ -1,4 +1,3 @@
-import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 
@@ -9,6 +8,7 @@ import { createI18n } from 'vue-i18n'
 import { en } from '../src/i18n/en'
 import '@mdi/font/css/materialdesignicons.css'
 import '../node_modules/vuetify/dist/vuetify.min.css'
+import './assets/main.css'
 import { pt } from './i18n/pt'
 
 const i18n = createI18n({
