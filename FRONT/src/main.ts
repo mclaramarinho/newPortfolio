@@ -4,8 +4,22 @@ import App from './App.vue'
 
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
+import { createI18n } from 'vue-i18n'
+import { en } from '../src/i18n/en'
 import '@mdi/font/css/materialdesignicons.css'
 import '../node_modules/vuetify/dist/vuetify.min.css'
+import { pt } from './i18n/pt'
+
+const i18n = createI18n({
+    locale: 'pt',
+    fallbackLocale: 'en',
+    messages: {
+        en: en,
+        pt: pt
+    }
+})
+
 
 const lightTheme = {
     dark: false,
@@ -45,4 +59,5 @@ const vuetify = createVuetify({
 const app = createApp(App)
 
 app.use(vuetify)
+app.use(i18n)
 app.mount('#app')
