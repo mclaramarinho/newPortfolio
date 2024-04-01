@@ -1,7 +1,7 @@
 <template>
     <v-window-item>
         <v-card variant="flat" class="project_display__container">
-            <img :src="'../assets/' + image" alt="" />
+            <img :src="'../public/' + image" alt="" />
 
             <div class="project_desc__container">
                 <a target="_blank" :href="url" class="project_title">{{ title }} 
