@@ -1,94 +1,41 @@
+export default class Skill {
+  name: string;
+  level: number;
+
+  constructor(name: string, level: 1 | 2 | 3 | 4) {
+    this.name = name;
+    this.level = level;
+  }
+}
+
 export const skills = [
-    {
-        name: "Vue.js",
-        level: 2
-    },
-    {
-        name: "React.js",
-        level: 2
-    },
-    {
-        name: "Python",
-        level: 2
-    },
-    {
-        name: "MongoDB",
-        level: 1
-    },
-    {
-        name: "Typescript",
-        level: 2
-    },
-    {
-        name: "Javascript",
-        level: 2
-    },
-    {
-        name: "Flask",
-        level: 1
-    },
-    {
-        name: "FastAPI",
-        level: 1
-    },
-    {
-        name: "OpenAI API",
-        level: 1
-    },
-    {
-        name: "REST APIs",
-        level: 1
-    },
-    {
-        name: "Chatbot Design",
-        level: 2
-    },
-    {
-        name: "Blip",
-        level: 1
-    },
-    {
-        name: "Telebot.py API",
-        level: 2
-    },
-    {
-        name: "UX",
-        level: 2
-    },
-    {
-        name: "Firebase Auth",
-        level: 1
-    },
-    {
-        name: "Firebase RTDB",
-        level: 2
-    },
-    {
-        name: "C#",
-        level: 1
-    },
-    {
-        name: ".NET",
-        level: 1
-    },
-    {
-        name: "CSS",
-        level: 2
-    },
-    {
-        name: "JQuery",
-        level: 1
-    },
-    {
-        name: "Figma (Software)",
-        level: 1
-    },
-    {
-        name: "Kanban + Scrum",
-        level: 1
-    },
-    {
-        name: "Bootstrap",
-        level: 2
-    }
+  new Skill("Vue.js", 2),
+  new Skill("React.js", 2),
+  new Skill("Python", 2),
+
+  new Skill("MongoDB", 1),
+  new Skill("Typescript", 2),
+  new Skill("Javascript", 2),
+  new Skill("Flask", 1),
+
+  new Skill("FastAPI", 1),
+  new Skill("OpenAI API", 1),
+  new Skill("REST APIs", 1),
+  new Skill("Chatbot Design", 2),
+  new Skill("Blip", 1),
+  new Skill("Telebot.py API", 2),
+  new Skill("UX", 2),
+  new Skill("Firebase Auth", 1),
+  new Skill("Firebase RTDB", 2),
+  new Skill("C#", 1),
+  new Skill(".NET", 1),
+  new Skill("CSS", 2),
+  new Skill("JQuery", 1),
+  new Skill("Figma (Software)", 1),
+  new Skill("Bootstrap", 2),
+  new Skill("GCP Cloud Functions", 1),
+  new Skill("GCP Cloud Workflows", 1),
+  new Skill("Docker", 1),
+  new Skill("Jest", 1),
+  new Skill("NPM", 1),
 ];

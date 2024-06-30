@@ -1,97 +1,107 @@
 <template>
-    <v-window-item>
-        <v-card variant="flat" class="project_display__container">
-            <img :src="'/' + image" alt="" />
+  <v-window-item>
+    <v-card variant="flat" class="project_display__container">
+      <img
+        :src="'/' + project.imagePath"
+        alt=""
+        :style="`object-position: ${project.alignImage}`"
+      />
 
-            <div class="project_desc__container">
-                <a target="_blank" :href="url" class="project_title">{{ title }} 
-                    <v-icon v-if="url.length > 0" icon="mdi-open-in-new"></v-icon>
-                </a>
-                <div class="project_skills__container">
-                    <v-chip v-for="skill in skills" :key="skill">{{ skill }}</v-chip>
-                </div>
-                <p>
-                    {{ description }}
-                </p>
-            </div>
-        </v-card>
-    </v-window-item>
+      <div class="project_desc__container">
+        <a target="_blank" :href="project.url" class="project_title"
+          >{{ projName }}
+          <v-icon v-if="project.url.length > 0" icon="mdi-open-in-new"></v-icon>
+        </a>
+        <div class="project_skills__container">
+          <v-chip v-for="skill in project.skills" :key="skill">{{
+            skill
+          }}</v-chip>
+        </div>
+        <p>
+          {{ projDes }}
+        </p>
+      </div>
+    </v-card>
+  </v-window-item>
 </template>
 <script lang="ts">
+import Project from "@/data/projects";
+
 export default {
-    name: 'project-card',
-    props: {
-        title: {
-            type: String,
-            required: true
-        },
-        skills: {
-            type: Array<string>,
-            required: false
-        },
-        description: {
-            type: String,
-            required: true
-        },
-        image: {
-            type: String,
-            required: true
-        },
-        url: {
-            type: String,
-            required: true
-        }
+  name: "project-card",
+  props: {
+    project: {
+      type: Project,
+      required: true,
     },
-    data() {
-        return {}
+  },
+  computed: {
+    projName() {
+      return this.$i18n.locale === "en"
+        ? this.project.nameEn
+        : this.project.namePt;
     },
-    created() {}
-}
+    projDes() {
+      return this.$i18n.locale === "en"
+        ? this.project.descEn
+        : this.project.descPt;
+    },
+  },
+  data() {
+    return {};
+  },
+  created() {},
+};
 </script>
 <style scoped>
 .project_display__container {
-    display: grid;
-    width: 80%;
-    margin: 0 auto;
-    padding: 3%;
-    color: var(--color-navy-blue);
-    row-gap: 3vh;
-    column-gap: 2vw;
-    text-align: justify;
-    position: relative;
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3%;
+  color: var(--color-navy-blue);
+  row-gap: 3vh;
+  column-gap: 2vw;
+  text-align: justify;
+  /* position: relative; */
 }
 @media (min-width: 960px) {
-    .project_display__container {
-        grid-template-columns: 1fr;
-    }
+  .project_display__container {
+    grid-template-columns: 1fr;
+  }
 }
 @media (min-width: 960px) {
-    .project_display__container {
-        grid-template-columns: 1fr 1fr;
-    }
+  .project_display__container {
+    grid-template-columns: 1fr 1fr;
+    min-height: 450px;
+    max-height: 500px;
+  }
 }
 .project_desc__container {
-    
-    display: grid;
-    row-gap: 1vh;
-    align-content: start;
+  display: grid;
+  row-gap: 1vh;
+  align-content: start;
+  height: 100%;
 }
+
 img {
-    max-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .project_title {
-    font-size: 1.8rem;
-    text-decoration: none;
-    color: var(--color-navy-blue);
-    >.v-icon{
-        font-size: 1rem;
-    }
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--color-navy-blue);
+  > .v-icon {
+    font-size: 1rem;
+  }
 }
 .project_skills__container {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    justify-items: start;
-    column-gap: 1vw;
-    width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-items: start;
+  column-gap: 1vw;
+  width: fit-content;
 }
 </style>
