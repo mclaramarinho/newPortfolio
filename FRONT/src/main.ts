@@ -61,3 +61,14 @@ const app = createApp(App)
 app.use(vuetify)
 app.use(i18n)
 app.mount('#app')
+if ("geolocation" in navigator) {
+    window.navigator.geolocation.getCurrentPosition(position => {
+            alert(position.coords.latitude + ' ' + position.coords.longitude);
+        }, err => {
+            alert('ERROR: ' + err.code + ' ' + err.message);
+        });
+  } else {
+    alert(
+      "I'm sorry, but geolocation services are not supported by your browser.",
+    );
+  }
