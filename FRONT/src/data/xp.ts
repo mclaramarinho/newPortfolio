@@ -124,13 +124,14 @@ export const xp = [
     "Avanade",
     "Estagiária de Desenvolvimento Fullstack",
     "Assoc. Fullstack Dev. Intern",
-    "Admitida pelo programa Decola Tech 2024, um bootcamp, no qual eu aprendi um pouco de C# e .NET. Fui uma das 100 selecionadas no Brasil inteiro para trabalhar em uma grande empresa de tecnologia.",
-    "Admitted by the Decola Tech 2024 program, a bootcamp, through which I learned C# and .NET. I was one of the 100 selected nationwide to work in a major technology company.",
+    "Admitida pelo programa Decola Tech 2024, um bootcamp, no qual eu aprendi um pouco de C# e .NET. Fui uma das 100 selecionadas no Brasil inteiro para trabalhar em uma grande empresa de tecnologia. Durante o estágio, fui responsável pelo desenvolvimento de uma plataforma de controle de horas (baseada no MyTE) com ASP.NET Core MVC, Entity Framework e SQL Server. Posteriormente, atuei no desenvolvimento fullstack de sistemas utilizando Ruby on Rails, React, Next.js, Tailwind CSS e PostgreSQL, contribuindo com novas funcionalidades e melhorias técnicas.",
+    "Selected for the Decola Tech 2024 program, a bootcamp where I learned the basics of C# and .NET. I was one of 100 candidates chosen nationwide in Brazil to work at a major tech company. During the internship, I was responsible for developing a time-tracking platform (based on MyTE) using ASP.NET Core MVC, Entity Framework, and SQL Server. Later, I worked on fullstack development of systems using Ruby on Rails, React, Next.js, Tailwind CSS, and PostgreSQL, contributing to new features and technical improvements.",
     new Date(2024, 3, 1),
     new Date(),
     "0 meses",
     "0 months"
   ),
+  
 
   new XP(
     "Voluntário - Verr Med",
@@ -143,6 +144,19 @@ export const xp = [
     new Date(),
     "1 mês",
     "1 month"
+  ),
+
+   new XP(
+    "Avanade",
+    "Avanade",
+    "Desenvolvedora Fullstack Jr.",
+    "Sr. Assoc. Fullstack Developer",
+    "Foco em desenvolvimento frontend web e mobile com React, Next.js, TypeScript, Flutter e Xamarin. Participei da migração inicial de um app de Xamarin para Flutter e atuei como mentora de estagiárias, facilitando o aprendizado técnico e integração com o time. Contribuí para a sustentação e melhoria de sistemas em Ruby on Rails e PostgreSQL, com foco em otimização de performance no frontend e backend. Experiência com Redis, Redlock e metodologias ágeis com Jira.",
+    "Focus on frontend web and mobile development using React, Next.js, TypeScript, Flutter, and Xamarin. Participated in the initial migration of an app from Xamarin to Flutter and mentored interns, supporting their technical learning and team integration. Contributed to the maintenance and improvement of systems built with Ruby on Rails and PostgreSQL, with a focus on performance optimization on both frontend and backend. Experience with Redis, Redlock, and agile methodologies using Jira.",
+    new Date(2024, 10, 01),
+    new Date(),
+    "0 meses",
+    "0 months"
   ),
 ];
 
