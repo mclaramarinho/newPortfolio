@@ -3,7 +3,7 @@ export const en = {
         hello: 'Hello!',
         name: 'I\'m Clara.',
         role: 'Webdeveloper',
-        bio: "I'm a full stack developer with a focus on web and mobile frontend, passionate about creating intuitive and high-performance interfaces. I have experience with React, Next.js, TypeScript, Flutter, and Xamarin, as well as backend technologies like Ruby on Rails, Python (FastAPI), and ASP.NET Core. I work with databases such as PostgreSQL, SQL Server, and MongoDB. I've contributed to app migrations, system optimization, and supported interns in their technical learning and team integration. I've also developed projects from scratch — from requirements gathering to deployment — and I'm always looking for new challenges and opportunities to grow. If you're looking for someone reliable, product-focused, and committed to quality, let’s talk!",
+        bio: "Full stack developer focused on web and mobile frontend. Experienced with React, Next.js, TypeScript, Flutter, Ruby on Rails, FastAPI, and more. I build high-quality, intuitive interfaces and love turning ideas into solid products. Let’s work together!",
         contactBtn: "Let's Talk",
         resumeBtn: "Resume"
     },
