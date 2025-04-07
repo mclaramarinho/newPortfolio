@@ -5,7 +5,7 @@ export const pt = {
     hello: "Olá!",
     name: "Me chamo Clara.",
     role: "Webdeveloper",
-    bio: "Sou web dev, tenho 23 anos e moro em Recife. Sou estagiária Full Stack na Avanade Brasil. Apaixonada por front-end, aprendendo também back-end com Python, MongoDB e Node.js.",
+    bio: "Sou desenvolvedora full stack com foco em frontend web e mobile, apaixonada por criar interfaces intuitivas e performáticas. Tenho experiência com React, Next.js, TypeScript, Flutter e Xamarin, além de backend com Ruby on Rails, Python (FastAPI) e ASP.NET Core. Trabalho com bancos de dados como PostgreSQL, SQL Server e MongoDB. Já atuei na migração de apps, otimização de sistemas e apoiei estagiárias no aprendizado técnico e integração com o time. Também desenvolvi projetos do zero — desde o levantamento de requisitos até o deploy — e estou sempre em busca de novos aprendizados e desafios. Se você busca alguém comprometida, com visão de produto e foco em qualidade, vamos conversar!",
     contactBtn: "Fale Comigo",
     resumeBtn: "Currículo",
   },
