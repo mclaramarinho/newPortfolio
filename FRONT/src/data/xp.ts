@@ -153,7 +153,7 @@ export const xp = [
     "Sr. Assoc. Fullstack Developer",
     "Foco em desenvolvimento frontend web e mobile com React, Next.js, TypeScript, Flutter e Xamarin. Participei da migração inicial de um app de Xamarin para Flutter e atuei como mentora de estagiárias, facilitando o aprendizado técnico e integração com o time. Contribuí para a sustentação e melhoria de sistemas em Ruby on Rails e PostgreSQL, com foco em otimização de performance no frontend e backend. Experiência com Redis, Redlock e metodologias ágeis com Jira.",
     "Focus on frontend web and mobile development using React, Next.js, TypeScript, Flutter, and Xamarin. Participated in the initial migration of an app from Xamarin to Flutter and mentored interns, supporting their technical learning and team integration. Contributed to the maintenance and improvement of systems built with Ruby on Rails and PostgreSQL, with a focus on performance optimization on both frontend and backend. Experience with Redis, Redlock, and agile methodologies using Jira.",
-    new Date(2024, 10, 01),
+    new Date(2024, 10, 1),
     new Date(),
     "0 meses",
     "0 months"
