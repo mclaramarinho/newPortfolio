@@ -55,6 +55,7 @@ export default {
 <style scoped>
 .pic_container {
   position: relative;
+  border-radius: 400px;
 }
 .linear_gradient {
   position: absolute;
