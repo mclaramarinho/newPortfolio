@@ -57,6 +57,10 @@ export default {
   position: relative;
   border-radius: 400px;
 }
+.action_buttons__container a{
+  appearence: none;
+  cursor: pointer;
+}
 .linear_gradient {
   position: absolute;
   bottom: 0;
