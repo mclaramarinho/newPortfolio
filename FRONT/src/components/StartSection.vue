@@ -74,7 +74,9 @@ section {
 }
 img {
   position: relative;
-  max-width: 100%;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
 }
 .start_main__content {
   display: grid;
