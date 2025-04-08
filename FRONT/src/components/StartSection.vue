@@ -56,6 +56,10 @@ export default {
 .pic_container {
   position: relative;
   border-radius: 400px;
+  > img {
+    border-radius: 50%; 
+    object-fit: cover;  
+  }
 }
 .action_buttons__container a{
   all: unset;
