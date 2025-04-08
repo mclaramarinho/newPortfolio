@@ -22,9 +22,11 @@
           @click="goToContactSection"
           >{{ $t("startSection.contactBtn") }}</v-btn
         >
-        <v-btn prepend-icon="mdi-download" variant="outlined">{{
-          $t("startSection.resumeBtn")
-        }}</v-btn>
+        <a href="https://drive.usercontent.google.com/u/0/uc?id=1QUjwt5EBzcpnkjvUn04zLw-nMA6as46B&export=download">
+          <v-btn prepend-icon="mdi-download" variant="outlined">{{
+            $t("startSection.resumeBtn")
+          }}</v-btn>
+        </a>
       </div>
     </div>
 
