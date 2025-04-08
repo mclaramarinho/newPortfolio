@@ -58,8 +58,8 @@ export default {
   border-radius: 400px;
 }
 .action_buttons__container a{
-  appearence: none;
-  cursor: pointer;
+  all: unset;
+  display: inline-block;
 }
 .linear_gradient {
   position: absolute;
